@@ -3,7 +3,7 @@
   <div
     v-if="visible"
     @click="closeModal(true)"
-    class="absolute top-0 left-0 h-full w-full"
+    class="fixed top-0 left-0 h-full w-full"
     style="background: rgba(0, 0, 0, 0.5)"
     ref="maskRef"
   ></div>
@@ -13,8 +13,8 @@
     @click.stop
     :class="`${
       paddingHide ? '' : 'p-4'
-    } absolute top-0 bottom-0 left-0 right-0 m-auto 
-    w-[${width}px]
+    } fixed top-0 bottom-0 left-0 right-0 m-auto 
+    w-[600px]
     h-[${height}px]
     bg-white rounded-md flex flex-col modal`"
   >
@@ -39,6 +39,12 @@
       </div>
     </slot>
   </div>
+  <!-- <div v-if="visible" class="w-[400px] h-[200px] bg-white"></div> -->
+  <!-- <div class="overlay" v-if="visible" @click="closeModal(true)">
+    <div class="modal">
+      <h1>Pick a Plan</h1>
+    </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
@@ -91,6 +97,47 @@ watch(props, () => {
 .modal {
   animation: fadeIn 0.1s ease-in-out;
 }
+// css
+// .overlay {
+//   //visibility: hidden;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background: rgba(0, 0, 0, 0.7);
+// }
+
+// .overlay:target {
+//   //visibility: visible;
+// }
+
+// .modal {
+//   position: relative;
+//   width: 600px;
+//   max-width: 80%;
+//   background: white;
+//   border-radius: 8px;
+//   padding: 1em 2em;
+// }
+
+// .modal .close {
+//   position: absolute;
+//   top: 15px;
+//   right: 15px;
+//   color: grey;
+//   text-decoration: none;
+// }
+
+// .overlay .cancel {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+// }
+
 @keyframes fadeIn {
   0% {
     opacity: 0.5;

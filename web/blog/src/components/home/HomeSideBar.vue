@@ -4,7 +4,7 @@
     <!--博客信息-->
     <blog-card>
       <template #body>
-        <div class="text-center">
+        <div class="text-center p-5">
           <blog-avatar
             :src="pinia.blogInfo.websiteConfig.websiteAvatar"
             :size="110"
@@ -34,8 +34,8 @@
     <!--网站信息-->
     <blog-card class="mt-[24px] min-w-[220px]">
       <template #head>
-        <line-chart-outlined style="color: rgb(240, 17, 17)" /><span
-          class="ml-2"
+        <font-awesome-icon icon="bell" class="text-[red]" />&nbsp;<span
+          class="ml-1"
           >网站信息</span
         >
       </template>

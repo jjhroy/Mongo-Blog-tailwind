@@ -5,7 +5,7 @@
         <h1 class="article-title">发布文章</h1>
       </div>
     </header-cover>
-    <div class="lg:py-[5%] lg:px-[25%] p-[16px]">
+    <div class="lg:py-[5%] lg:px-[15%] p-[16px]">
       <blog-card class="p-[24px]">
         <template #body>
           <!-- 标题 -->

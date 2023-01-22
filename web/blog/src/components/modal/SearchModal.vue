@@ -10,8 +10,7 @@
         class="flex px-1 py-2 w-full border-2 border-[#605f61] rounded-[2rem] items-center"
       >
         <font-awesome-icon icon="magnifying-glass" class="ml-2" />
-        <!-- <input v-model="state.keywords" placeholder="请输入文章标题或内容..." /> -->
-        <blog-input></blog-input>
+        <blog-input :border="false" :width="600"></blog-input>
       </div>
       <!-- 搜索结果 -->
       <div class="search-result-wrapper">

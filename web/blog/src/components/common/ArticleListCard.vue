@@ -19,7 +19,7 @@
         {{ article.articleTitle }}
       </router-link>
       <span v-if="article.isTop === 1" class="flex items-center text-xs">
-        <vertical-align-top-outlined class="text-[red] mr-1" />
+        <font-awesome-icon icon="up-long" class="text-[red]" />&nbsp;
         <span>置顶</span>
       </span>
     </div>
@@ -30,19 +30,23 @@
     <!-- 其它数据 -->
     <div class="flex mt-auto items-center">
       <span class="flex items-center">
-        <container-filled class="mr-1" /> {{ article.categoryName }}
+        <font-awesome-icon icon="receipt" />&nbsp; {{ article.categoryName }}
       </span>
       <span
-        class="w-[2px] h-[16px] bg-[black] rounded-md border mx-[8px]"
+        class="w-[4px] h-[16px] bg-[black] rounded-md border mx-[8px]"
       ></span>
       <span class="flex items-center" v-if="article.tagDTOList.length === 1">
-        <tags-filled class="mr-1" /> {{ article.tagDTOList[0].tagName }}
+        <font-awesome-icon icon="tag" />&nbsp;
+        {{ article.tagDTOList[0].tagName }}
       </span>
       <span class="flex items-center" v-else>
-        <tags-filled class="mr-1" /> {{ article.tagDTOList[0].tagName }} ...
+        <font-awesome-icon icon="tag" />&nbsp;{{
+          article.tagDTOList[0].tagName
+        }}
+        ...
       </span>
       <span class="flex items-center ml-auto">
-        <calendar-filled class="mr-1" />
+        <font-awesome-icon icon="calendar" />&nbsp;
         {{ formatDate(article.createTime) }}
       </span>
     </div>
