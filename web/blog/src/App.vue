@@ -19,14 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import ToolBar from './components/common/ToolBar.vue'
 import { getBlogInfo } from './api/blog'
 import { uploadUserInfo } from './api/user'
-import FootBar from './layouts/FootBar.vue'
-import LoginModal from './components/modal/LoginModal.vue'
-import SearchModal from './components/modal/SearchModal.vue'
 import { useRoute } from 'vue-router'
 import { useStore } from './store/index'
+import ToolBar from '@/components/common/ToolBar.vue'
+import FootBar from '@/layouts/FootBar.vue'
+import LoginModal from '@/components/common/LoginModal.vue'
+import SearchModal from '@/components/common/SearchModal.vue'
 
 const route = ref(useRoute())
 const pinia = useStore()

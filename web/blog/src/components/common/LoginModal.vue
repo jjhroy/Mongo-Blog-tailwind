@@ -51,14 +51,12 @@
   </blog-modal>
 </template>
 <script setup lang="ts">
-import BlogButton from '../mongo-ui/BlogButton.vue'
-import BlogFormItem from '../mongo-ui/BlogFormItem.vue'
-import BlogInput from '../mongo-ui/BlogInput.vue'
-import BlogModal from '../mongo-ui/BlogModal.vue'
-import { reactive, ref } from 'vue'
+import BlogButton from '../mongo-ui/button/index.vue'
+import BlogFormItem from '../mongo-ui/form/form-item/index.vue'
+import BlogInput from '../mongo-ui/input/index.vue'
+import BlogModal from '../mongo-ui/modal/index.vue'
 import config from '@/config/config'
 import { useStore } from '@/store/index'
-import { useRoute } from 'vue-router'
 import { userLogin } from '@/api/auth'
 import { loginParams } from '@/types/api/auth'
 

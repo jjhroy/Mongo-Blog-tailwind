@@ -48,9 +48,9 @@
 </template>
 
 <script setup lang="ts">
-import BlogAvatar from '../mongo_ui/BlogAvatar.vue'
-import BackTop from './BackTop.vue'
-import BlogButton from '../mongo_ui/BlogButton.vue'
+import BlogAvatar from '@/components/mongo-ui/avatar/index.vue'
+import BackTop from '@/components/mongo-ui/backtop/index.vue'
+import BlogButton from '@/components/mongo-ui/button/index.vue'
 import { useStore } from '@/store'
 
 const pinia = useStore()

@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import BlogButton from './BlogButton.vue'
+import BlogButton from '../button/index.vue'
 
 const scrollTop = ref(0)
 const btnFlag = ref(false)

@@ -62,8 +62,8 @@
 </template>
 
 <script setup lang="ts">
-import BlogAvatar from '../mongo_ui/BlogAvatar.vue'
-import BlogCard from '../mongo_ui/BlogCard.vue'
+import BlogAvatar from '../mongo-ui/avatar/index.vue'
+import BlogCard from '../mongo-ui/card/index.vue'
 import { useStore } from '@/store/index'
 import { getDayDiff } from '@/utils/dateFormat'
 

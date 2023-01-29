@@ -43,8 +43,8 @@
 </template>
 
 <script setup lang="ts">
-import BlogInput from '../mongo-ui/BlogInput.vue'
-import BlogModal from '../mongo-ui/BlogModal.vue'
+import BlogInput from '../mongo-ui/input/index.vue'
+import BlogModal from '../mongo-ui/modal/index.vue'
 import { searchArticle } from '@/api/article'
 import { articles } from '@/types/api/article'
 import { reactive } from 'vue'

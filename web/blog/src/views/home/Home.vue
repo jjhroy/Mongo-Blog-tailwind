@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import TypeIt from '@/utils/typeit'
 import HomeSideBar from '@/components/home/HomeSideBar.vue'
-import HeaderCover from '@/components/mongo-ui/HeaderCover.vue'
+import HeaderCover from '@/components/common/HeaderCover.vue'
 import HomeArticleList from '@/components/home/HomeArticleList.vue'
 
 // const pinia = useStore()

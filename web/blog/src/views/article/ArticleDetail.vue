@@ -45,10 +45,10 @@
 import { useRoute } from 'vue-router'
 import { articleDetails } from '@/types/api/article'
 import { getArticleDetail } from '@/api/article'
-import HeaderCover from '@/components/mongo-ui/HeaderCover.vue'
+import { formatDate } from '@/utils/dateFormat'
+import HeaderCover from '@/components/common/HeaderCover.vue'
 import ArticleMain from '@/components/article/ArticleMain.vue'
 import ArticleSideBar from '@/components/article/ArticleSideBar.vue'
-import { formatDate } from '@/utils/dateFormat'
 
 const articleDetail = ref({} as articleDetails)
 const route = useRoute()

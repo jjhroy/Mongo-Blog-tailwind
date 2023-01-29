@@ -5,28 +5,9 @@
       <p>啊哦，出错啦</p>
       <p>你寻找的页面走丢啦!</p>
       <router-link to="/" class="link_404">返回主页</router-link>
-      <blog-input class="mt-8" rounded></blog-input>
-      <!-- <blog-popover class="mt-4"></blog-popover> -->
-      <blog-button @click="pinia.showLoginModal = !pinia.showLoginModal"
-        >通知</blog-button
-      >
-      <blog-message :visible="isShow" type="error">操作失败</blog-message>
-      <div>ssssssssssssssss</div>
     </div>
   </div>
 </template>
-<script setup>
-import BlogMessage from '@/components/mongo_ui/BlogMessage.vue'
-import BlogButton from '@/components/mongo_ui/BlogButton.vue'
-import BlogPopover from '@/components/mongo_ui/BlogPopover.vue'
-import BlogInput from '@/components/mongo_ui/BlogInput.vue'
-import { useStore } from '@/store'
-
-const pinia = useStore()
-const isShow = ref(false)
-const btnText = ref('show')
-</script>
-
 <style scoped>
 .link_404 {
   color: #fff;

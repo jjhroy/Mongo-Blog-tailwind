@@ -21,7 +21,7 @@
 import { useStore } from '@/store/index'
 import { articles } from '@/types/api/article'
 import { getArticleList } from '@/api/article'
-import ArticleListCard from '@/components/mongo-ui/ArticleListCard.vue'
+import ArticleListCard from '@/components/common/ArticleListCard.vue'
 import InfiniteLoading from 'v3-infinite-loading'
 import 'v3-infinite-loading/lib/style.css'
 
