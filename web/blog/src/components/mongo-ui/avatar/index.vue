@@ -1,10 +1,4 @@
 <template>
-  <!-- <div :class="`w-[${size}px] h-[${size}px] p-5`">
-    <img
-      :src="src"
-      :class="`${type === 'circle' ? 'rounded-[50%]' : ''} w-full h-full`"
-    />
-  </div> -->
   <img
     :src="src"
     :class="`${

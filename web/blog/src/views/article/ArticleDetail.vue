@@ -45,7 +45,7 @@
 import { useRoute } from 'vue-router'
 import { articleDetails } from '@/types/api/article'
 import { getArticleDetail } from '@/api/article'
-import HeaderCover from '@/components/common/HeaderCover.vue'
+import HeaderCover from '@/components/mongo-ui/HeaderCover.vue'
 import ArticleMain from '@/components/article/ArticleMain.vue'
 import ArticleSideBar from '@/components/article/ArticleSideBar.vue'
 import { formatDate } from '@/utils/dateFormat'

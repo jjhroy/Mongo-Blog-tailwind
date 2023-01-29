@@ -46,10 +46,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import BlogPagination from '@/components/common/BlogPagination.vue'
+import BlogPagination from '@/components/mongo-ui/BlogPagination.vue'
 import { onMounted, reactive } from 'vue'
-import HeaderCover from '@/components/common/HeaderCover.vue'
-import BlogCard from '@/components/common/BlogCard.vue'
+import HeaderCover from '@/components/mongo-ui/HeaderCover.vue'
+import BlogCard from '@/components/mongo-ui/BlogCard.vue'
 import { getArchiveData } from '@/api/blog'
 import { archiveShowList } from '@/types/api/blog'
 import { archives } from '@/types/api/blog'

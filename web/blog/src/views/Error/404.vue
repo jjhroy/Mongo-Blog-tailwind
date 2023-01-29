@@ -16,10 +16,10 @@
   </div>
 </template>
 <script setup>
-import BlogMessage from '@/components/common/BlogMessage.vue'
-import BlogButton from '@/components/common/BlogButton.vue'
-import BlogPopover from '@/components/common/BlogPopover.vue'
-import BlogInput from '@/components/common/BlogInput.vue'
+import BlogMessage from '@/components/mongo_ui/BlogMessage.vue'
+import BlogButton from '@/components/mongo_ui/BlogButton.vue'
+import BlogPopover from '@/components/mongo_ui/BlogPopover.vue'
+import BlogInput from '@/components/mongo_ui/BlogInput.vue'
 import { useStore } from '@/store'
 
 const pinia = useStore()

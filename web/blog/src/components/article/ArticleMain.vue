@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import BlogCard from '@/components/common/BlogCard.vue'
+import BlogCard from '@/components/mongo_ui/BlogCard.vue'
 
 const props = defineProps<{ articleDetails: any }>()
 </script>

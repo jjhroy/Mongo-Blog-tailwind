@@ -29,7 +29,7 @@
 
 <script setup>
 import { reactive } from 'vue'
-import BlogCard from '../common/BlogCard.vue'
+import BlogCard from '../mongo-ui/BlogCard.vue'
 
 const state = reactive({
   titles: [],

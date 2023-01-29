@@ -37,9 +37,9 @@
 </template>
 
 <script setup lang="ts">
-import BlogFormItem from '@/components/common/BlogFormItem.vue'
-import BlogUpload from '@/components/common/BlogUpload.vue'
-import BlogSwitch from '@/components/common/BlogSwitch.vue'
+import BlogFormItem from '@/components/mongo-ui/BlogFormItem.vue'
+import BlogUpload from '@/components/mongo-ui/BlogUpload.vue'
+import BlogSwitch from '@/components/mongo-ui/BlogSwitch.vue'
 import ArticleEditor from '@/components/article/ArticleEditor.vue'
 
 const isTop = ref(false)

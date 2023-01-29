@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import BlogButton from './BlogButton.vue'
+import BlogButton from '../button/index.vue'
 
 const maskRef = ref()
 const emits = defineEmits(['update:visible'])
