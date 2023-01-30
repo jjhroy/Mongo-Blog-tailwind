@@ -28,8 +28,15 @@
           </BlogFormItem>
 
           <BlogFormItem label="文章封面">
-            <BlogUpload />
+            <BlogUpload
+              v-model:file="file"
+              accept="image/*"
+              action="/api/admin/articles/images"
+              :before-upload="beforeUpload"
+              pre-view
+            />
           </BlogFormItem>
+          <m-tag>标签</m-tag>
         </template>
       </blog-card>
     </div>
@@ -37,15 +44,50 @@
 </template>
 
 <script setup lang="ts">
+import { coverUpload } from '@/api/file'
+import Compressor from 'compressorjs'
+import BlogCard from '@/components/mongo-ui/card/index.vue'
 import BlogFormItem from '@/components/mongo-ui/form/form-item/index.vue'
 import BlogUpload from '@/components/mongo-ui/upload/index.vue'
 import BlogSwitch from '@/components/mongo-ui/switch/index.vue'
 import ArticleEditor from '@/components/article/ArticleEditor.vue'
+import MTag from '@/components/mongo-ui/tag/index.vue'
 
+const file = ref()
 const isTop = ref(false)
+const coverUrl = ref('')
 const switchClick = () => {
   isTop.value = !isTop.value
 }
+
+//上传前处理
+const beforeUpload = (value: any) => {
+  console.log('执行上传前处理')
+  console.log('file', file.value)
+  if (!value) {
+    return
+  }
+  new Compressor(value, {
+    quality: 0.8,
+    success(result) {
+      file.value = result
+    },
+    error(err) {
+      console.log(err.message)
+    },
+  })
+}
+
+//执行上传
+const handelUpload = async (file: any) => {
+  // const uploadForm = new FormData()
+  // uploadForm.append('file', file)
+  // const res = await coverUpload(uploadForm)
+  // console.log(res)
+  console.log('自定义', file)
+}
+
+const uploadClick = () => {}
 
 const articleFrom = ref({
   title: '',

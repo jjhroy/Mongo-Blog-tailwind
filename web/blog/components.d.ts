@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     HeaderCover: typeof import('./src/components/common/HeaderCover.vue')['default']
     HomeArticleList: typeof import('./src/components/home/HomeArticleList.vue')['default']
     HomeSideBar: typeof import('./src/components/home/HomeSideBar.vue')['default']
+    Img: typeof import('./src/components/mongo-ui/img/index.vue')['default']
     Input: typeof import('./src/components/mongo-ui/input/index.vue')['default']
     LoginModal: typeof import('./src/components/common/LoginModal.vue')['default']
     Message: typeof import('./src/components/mongo-ui/message/index.vue')['default']
@@ -31,6 +32,7 @@ declare module '@vue/runtime-core' {
     Select: typeof import('./src/components/mongo-ui/select/index.vue')['default']
     Switch: typeof import('./src/components/mongo-ui/switch/index.vue')['default']
     Swtich: typeof import('./src/components/mongo-ui/swtich/index.vue')['default']
+    Tag: typeof import('./src/components/mongo-ui/tag/index.vue')['default']
     ToolBar: typeof import('./src/components/common/ToolBar.vue')['default']
     Upload: typeof import('./src/components/mongo-ui/upload/index.vue')['default']
   }

@@ -4,7 +4,7 @@ import {
     faAngleLeft, faAngleRight, faXmark, faCalendar,
     faClockRotateLeft, faEye, faTag, faTags, faReceipt,
     faEyeSlash, faPlus, faCheck, faUpLong, faPen, faRightToBracket,
-    faUser
+    faUser, faImage
 
 } from '@fortawesome/free-solid-svg-icons'
 library
@@ -12,5 +12,5 @@ library
         faAngleLeft, faAngleRight, faXmark, faCalendar,
         faClockRotateLeft, faEye, faTag, faTags, faReceipt,
         faEyeSlash, faPlus, faCheck, faUpLong, faPen, faRightToBracket,
-        faUser
+        faUser, faImage
     )
