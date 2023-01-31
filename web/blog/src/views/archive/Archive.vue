@@ -6,7 +6,7 @@
       </div>
     </header-cover>
     <div class="lg:py-[5%] lg:px-[25%] p-[16px]">
-      <blog-card class="p-[24px]">
+      <m-card class="p-[24px]">
         <template #body>
           <div>
             <div class="font-semibold text-[24px] mb-2">
@@ -41,14 +41,14 @@
             ></blog-pagination>
           </div>
         </template>
-      </blog-card>
+      </m-card>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import BlogPagination from '@/components/mongo-ui/pagination/index.vue'
 import HeaderCover from '@/components/common/HeaderCover.vue'
-import BlogCard from '@/components/mongo-ui/card/index.vue'
+import MCard from '@/components/mongo-ui/card/index.vue'
 import { getArchiveData } from '@/api/blog'
 import { archiveShowList } from '@/types/api/blog'
 import { archives } from '@/types/api/blog'

@@ -2,7 +2,7 @@
   <!--侧边栏-->
   <div class="flex-[0.2] px-4 h-[100vh] sticky top-6 mt-4">
     <!--博客信息-->
-    <blog-card>
+    <m-card>
       <template #body>
         <div class="text-center p-5">
           <blog-avatar
@@ -29,10 +29,10 @@
           </div>
         </div>
       </template>
-    </blog-card>
+    </m-card>
 
     <!--网站信息-->
-    <blog-card class="mt-[24px] min-w-[220px]">
+    <m-card class="mt-[24px] min-w-[220px]">
       <template #head>
         <font-awesome-icon icon="bell" class="text-[red]" />&nbsp;<span
           class="ml-1"
@@ -57,13 +57,13 @@
           </div>
         </div>
       </template>
-    </blog-card>
+    </m-card>
   </div>
 </template>
 
 <script setup lang="ts">
 import BlogAvatar from '../mongo-ui/avatar/index.vue'
-import BlogCard from '../mongo-ui/card/index.vue'
+import MCard from '../mongo-ui/card/index.vue'
 import { useStore } from '@/store/index'
 import { getDayDiff } from '@/utils/dateFormat'
 

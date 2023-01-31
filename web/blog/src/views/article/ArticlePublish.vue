@@ -6,7 +6,7 @@
       </div>
     </header-cover>
     <div class="lg:py-[5%] lg:px-[15%] p-[16px]">
-      <blog-card class="p-[24px]">
+      <m-card class="p-[24px]">
         <template #body>
           <!-- 标题 -->
           <input
@@ -23,22 +23,27 @@
             @update:content="(v: string) => (articleFrom.content = v)"
           />
 
-          <BlogFormItem label="置顶" class="mt-6">
-            <BlogSwitch @click="switchClick" :is-enable="isTop"></BlogSwitch>
-          </BlogFormItem>
+          <m-form-item label="置顶" class="mt-6">
+            <m-switch @click="switchClick" :is-enable="isTop"></m-switch>
+          </m-form-item>
 
-          <BlogFormItem label="文章封面">
-            <BlogUpload
-              v-model:file="file"
-              accept="image/*"
-              action="/api/admin/articles/images"
-              :before-upload="beforeUpload"
-              pre-view
-            />
-          </BlogFormItem>
-          <m-tag>标签</m-tag>
+          <m-form>
+            <m-form-item label="文章标签">
+              <m-select></m-select>
+            </m-form-item>
+
+            <m-form-item label="文章封面">
+              <m-upload
+                v-model:file="file"
+                accept="image/*"
+                action="/api/admin/articles/images"
+                :before-upload="beforeUpload"
+                pre-view
+              />
+            </m-form-item>
+          </m-form>
         </template>
-      </blog-card>
+      </m-card>
     </div>
   </div>
 </template>
@@ -46,12 +51,13 @@
 <script setup lang="ts">
 import { coverUpload } from '@/api/file'
 import Compressor from 'compressorjs'
-import BlogCard from '@/components/mongo-ui/card/index.vue'
-import BlogFormItem from '@/components/mongo-ui/form/form-item/index.vue'
-import BlogUpload from '@/components/mongo-ui/upload/index.vue'
-import BlogSwitch from '@/components/mongo-ui/switch/index.vue'
+import MSelect from '@/components/mongo-ui/select/index.vue'
+import MCard from '@/components/mongo-ui/card/index.vue'
+import MForm from '@/components/mongo-ui/form/form/index.vue'
+import MFormItem from '@/components/mongo-ui/form/form-item/index.vue'
+import MUpload from '@/components/mongo-ui/upload/index.vue'
+import MSwitch from '@/components/mongo-ui/switch/index.vue'
 import ArticleEditor from '@/components/article/ArticleEditor.vue'
-import MTag from '@/components/mongo-ui/tag/index.vue'
 
 const file = ref()
 const isTop = ref(false)
@@ -59,18 +65,23 @@ const coverUrl = ref('')
 const switchClick = () => {
   isTop.value = !isTop.value
 }
+const showPopover = ref(false)
 
 //上传前处理
-const beforeUpload = (value: any) => {
-  console.log('执行上传前处理')
+const beforeUpload = async (value: any) => {
+  console.log('执行上传前处理', value)
   console.log('file', file.value)
+  const uploadForm = new FormData()
+  uploadForm.append('file', value)
+  const res = await coverUpload(uploadForm)
   if (!value) {
     return
   }
   new Compressor(value, {
     quality: 0.8,
     success(result) {
-      file.value = result
+      //Blob 转 File
+      file.value = new window.File([result], value.name, { type: value.type })
     },
     error(err) {
       console.log(err.message)

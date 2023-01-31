@@ -41,21 +41,27 @@ const coverUrl = ref('')
 const uploadRef = ref()
 /**默认上传方法 */
 const onUpload = async (value: any) => {
-  console.log('upload', props.file)
-  let file = value.target.files[0]
   if (props.beforeUpload != undefined) {
-    console.log('压缩')
-    file = await props.beforeUpload(file)
+    await props.beforeUpload(value.target.files[0])
   }
-  console.log('newSize', props.file)
-  // const uploadForm = new FormData()
-  // uploadForm.append('file', file)
-  // const { data } = await axios.post(props.action, uploadForm)
 }
 const uploadClick = () => {
   //模拟点击
   uploadRef.value.click()
 }
+
+watch(
+  () => props.file,
+  async () => {
+    const uploadForm = new FormData()
+    uploadForm.append('file', props.file)
+    const { data } = await axios.post(props.action, uploadForm)
+    if (props.preView) {
+      coverUrl.value = data.data
+    }
+    console.log(data)
+  }
+)
 </script>
 
 <style scoped></style>

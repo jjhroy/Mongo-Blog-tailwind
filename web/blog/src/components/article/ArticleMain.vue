@@ -1,5 +1,5 @@
 <template>
-  <blog-card class="bg-[white]">
+  <m-card class="bg-[white]">
     <template #body>
       <!--文章内容-->
       <div class="article-content">
@@ -8,11 +8,11 @@
         ></v-md-preview>
       </div>
     </template>
-  </blog-card>
+  </m-card>
 </template>
 
 <script setup lang="ts">
-import BlogCard from '@/components/mongo-ui/card/index.vue'
+import MCard from '@/components/mongo-ui/card/index.vue'
 
 const props = defineProps<{ articleDetails: any }>()
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <blog-card>
+  <m-card>
     <template #head>
       <menu-outlined /> &nbsp;<span>目录</span>
       <span class="text-[#a9a9a9] text-[18px] ml-auto">{{
@@ -24,12 +24,12 @@
         </div>
       </div>
     </template>
-  </blog-card>
+  </m-card>
 </template>
 
 <script setup>
 import { reactive } from 'vue'
-import BlogCard from '../mongo-ui/card/index.vue'
+import MCard from '../mongo-ui/card/index.vue'
 
 const state = reactive({
   titles: [],

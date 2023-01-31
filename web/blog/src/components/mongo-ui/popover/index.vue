@@ -1,8 +1,9 @@
 <template>
-  <div class="relative flex flex-col">
-    <blog-button @click="isShow = !isShow">popover</blog-button>
+  <div class="relative flex flex-col mt-2">
+    <!-- <blog-button @click="isShow = !isShow">popover</blog-button> -->
+    <slot name="default"></slot>
     <div
-      v-show="isShow"
+      v-show="props.visible"
       class="absolute top-[37px] left-[50%] transform translate-x-[-50%]"
     >
       <div class="overflow-hidden">
@@ -10,7 +11,9 @@
           class="bg-[#fff] h-4 w-4 transform rotate-45 mx-auto translate-y-2 arrow"
         ></div>
       </div>
-      <div class="bg-[#fff] h-full min-w-[200px] p-2">sss</div>
+      <div class="bg-[#fff] h-full min-w-[300px] p-2 rounded-md shadow-lg">
+        <slot name="content"></slot>
+      </div>
     </div>
 
     <!-- <div class="relative popover mt-2 w-100 z-1000" v-show="isShow">

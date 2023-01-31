@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BackTop: typeof import('./src/components/mongo-ui/backtop/BackTop.vue')['default']
     Button: typeof import('./src/components/mongo-ui/button/index.vue')['default']
     Card: typeof import('./src/components/mongo-ui/card/index.vue')['default']
+    Form: typeof import('./src/components/mongo-ui/form/form/index.vue')['default']
     FormItem: typeof import('./src/components/mongo-ui/form/form-item/index.vue')['default']
     HeaderCover: typeof import('./src/components/common/HeaderCover.vue')['default']
     HomeArticleList: typeof import('./src/components/home/HomeArticleList.vue')['default']

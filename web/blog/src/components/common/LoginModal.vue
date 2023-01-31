@@ -52,7 +52,7 @@
 </template>
 <script setup lang="ts">
 import BlogButton from '../mongo-ui/button/index.vue'
-import BlogFormItem from '../mongo-ui/form/form-item/index.vue'
+import MFormItem from '../mongo-ui/form/form-item/index.vue'
 import BlogInput from '../mongo-ui/input/index.vue'
 import BlogModal from '../mongo-ui/modal/index.vue'
 import config from '@/config/config'
