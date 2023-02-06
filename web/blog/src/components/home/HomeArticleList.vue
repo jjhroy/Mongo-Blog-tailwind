@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '@/store/index'
+import { articleStore } from '@/store/index'
 import { articles } from '@/types/api/article'
 import { getArticleList } from '@/api/article'
 import ArticleListCard from '@/components/common/ArticleListCard.vue'
@@ -42,7 +42,7 @@ const load = () => {
   console.log('test')
 }
 
-const pinia = useStore()
+const pinia = articleStore()
 const state = reactive({
   trendingRepos: [],
   page: 1,

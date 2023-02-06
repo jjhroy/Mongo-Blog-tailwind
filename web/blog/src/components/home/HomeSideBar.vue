@@ -64,10 +64,10 @@
 <script setup lang="ts">
 import BlogAvatar from '../mongo-ui/avatar/index.vue'
 import MCard from '../mongo-ui/card/index.vue'
-import { useStore } from '@/store/index'
+import { articleStore } from '@/store/index'
 import { getDayDiff } from '@/utils/dateFormat'
 
-const pinia = useStore()
+const pinia = articleStore()
 </script>
 
 <style scoped></style>

@@ -11,8 +11,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useStore } from '../store/index'
-const pinia = useStore()
+import { articleStore } from '../store/index'
+const pinia = articleStore()
 </script>
 <style scoped lang="scss">
 .footer-wrap {

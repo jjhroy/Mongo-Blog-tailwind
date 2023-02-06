@@ -34,6 +34,7 @@ declare module '@vue/runtime-core' {
     Switch: typeof import('./src/components/mongo-ui/switch/index.vue')['default']
     Swtich: typeof import('./src/components/mongo-ui/swtich/index.vue')['default']
     Tag: typeof import('./src/components/mongo-ui/tag/index.vue')['default']
+    Timeline: typeof import('./src/components/mongo-ui/timeline/index.vue')['default']
     ToolBar: typeof import('./src/components/common/ToolBar.vue')['default']
     Upload: typeof import('./src/components/mongo-ui/upload/index.vue')['default']
   }

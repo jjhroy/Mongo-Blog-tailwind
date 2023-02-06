@@ -1,7 +1,10 @@
 <template>
   <div class="flex items-center">
     <button
-      :class="`mr-4 ${isFirstPage() ? 'cursor-not-allowed' : 'cursor-pointer'}`"
+      v-if="arrow"
+      :class="`mr-4 ${
+        isFirstPage() ? 'cursor-not-allowed' : 'cursor-pointer'
+      } `"
       :disabled="isFirstPage()"
       @click="pageChange(1)"
     >
@@ -10,13 +13,15 @@
     <div
       v-for="i in Math.ceil(props.total / props.pageSize)"
       :key="i"
-      class="w-[30px] h-[30px] mx-1 text-center border border-1 cursor-pointer"
-      :style="isCurrent(i)"
+      :class="`w-[30px] h-[30px] mx-1 text-center cursor-pointer rounded-sm ${isCurrent(
+        i
+      )}`"
       @click="pageChange(3, i)"
     >
       <span class="leading-[30px]">{{ i }}</span>
     </div>
     <button
+      v-if="arrow"
       :class="`ml-4 ${isLastPage() ? 'cursor-not-allowed' : 'cursor-pointer'} `"
       @click="pageChange(2)"
       :disabled="isLastPage()"
@@ -32,9 +37,12 @@ const props = defineProps<{
   total: number
   pageSize: number
   currentPage: number
+  arrow?: boolean
 }>()
 const isCurrent = (index: number) =>
-  props.currentPage === index ? 'border-color:#1890FF' : 'border-color:#d9d9d9'
+  props.currentPage === index
+    ? 'bg-[#3273DC] text-[#FFF]'
+    : 'bg-[#FFF] text-[#555]'
 const isFirstPage = () => (props.currentPage === 1 ? true : false)
 const isLastPage = () =>
   props.currentPage === Math.ceil(props.total / props.pageSize) ? true : false

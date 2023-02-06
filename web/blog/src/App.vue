@@ -22,14 +22,14 @@
 import { getBlogInfo } from './api/blog'
 import { uploadUserInfo } from './api/user'
 import { useRoute } from 'vue-router'
-import { useStore } from './store/index'
+import { articleStore } from '@/store/index'
 import ToolBar from '@/components/common/ToolBar.vue'
 import FootBar from '@/layouts/FootBar.vue'
 import LoginModal from '@/components/common/LoginModal.vue'
 import SearchModal from '@/components/common/SearchModal.vue'
 
 const route = ref(useRoute())
-const pinia = useStore()
+const pinia = articleStore()
 const consoleInit = () => {
   console.log(
     '#######################################\n#                                     #\n#             Mongo BLog              #\n#             Version 2.0             #\n#   github:https://github.com/jjhroy  #\n#   gitee:https://gitee.com/jjhroy    #\n#            Power by ROY             #\n#                                     #\n#######################################'

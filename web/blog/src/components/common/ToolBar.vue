@@ -51,9 +51,9 @@
 import BlogAvatar from '@/components/mongo-ui/avatar/index.vue'
 import BackTop from '@/components/mongo-ui/backtop/index.vue'
 import BlogButton from '@/components/mongo-ui/button/index.vue'
-import { useStore } from '@/store'
+import { articleStore } from '@/store'
 
-const pinia = useStore()
+const pinia = articleStore()
 const showSearchModal = () => {
   pinia.showSearchModal = true
 }

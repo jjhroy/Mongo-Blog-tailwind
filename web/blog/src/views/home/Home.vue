@@ -20,5 +20,5 @@ import HomeSideBar from '@/components/home/HomeSideBar.vue'
 import HeaderCover from '@/components/common/HeaderCover.vue'
 import HomeArticleList from '@/components/home/HomeArticleList.vue'
 
-// const pinia = useStore()
+// const pinia = articleStore()
 </script>

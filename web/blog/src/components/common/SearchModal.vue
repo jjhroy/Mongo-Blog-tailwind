@@ -48,9 +48,9 @@ import BlogModal from '../mongo-ui/modal/index.vue'
 import { searchArticle } from '@/api/article'
 import { articles } from '@/types/api/article'
 import { reactive } from 'vue'
-import { useStore } from '@/store/index'
+import { articleStore } from '@/store/index'
 import { useRouter } from 'vue-router'
-const pinia = useStore()
+const pinia = articleStore()
 const router = useRouter()
 
 const state = reactive({

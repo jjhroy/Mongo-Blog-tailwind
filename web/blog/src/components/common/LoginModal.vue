@@ -56,11 +56,11 @@ import MFormItem from '../mongo-ui/form/form-item/index.vue'
 import BlogInput from '../mongo-ui/input/index.vue'
 import BlogModal from '../mongo-ui/modal/index.vue'
 import config from '@/config/config'
-import { useStore } from '@/store/index'
+import { articleStore } from '@/store/index'
 import { userLogin } from '@/api/auth'
 import { loginParams } from '@/types/api/auth'
 
-const pinia = useStore()
+const pinia = articleStore()
 const imgUrl = ref('https://upload.linkstarted.top/cloudfile/anya.jpg')
 const owlStyle = ref('')
 const loginForm = ref({
