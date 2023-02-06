@@ -6,13 +6,19 @@
       <p>你寻找的页面走丢啦!</p>
       <router-link to="/" class="link_404">返回主页</router-link> -->
       <m-timeline></m-timeline>
+      <!-- <m-message></m-message> -->
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import MImg from '@/components/mongo-ui/img/index.vue'
+import { successMessage, errorMessage } from '@/components/mongo-ui/message'
 import MSelect from '@/components/mongo-ui/select/index.vue'
 import MTimeline from '@/components/mongo-ui/timeline/index.vue'
+import MMessage from '@/components/mongo-ui/message/index.vue'
+onMounted(() => {
+  successMessage('hello world')
+})
 </script>
 <style scoped>
 .link_404 {
