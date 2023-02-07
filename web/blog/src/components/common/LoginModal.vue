@@ -23,15 +23,15 @@
           <div class="text-[#303133] font-bold text-[18px] text-center mb-2">
             <h3>登录</h3>
           </div>
-          <blog-form-item>
+          <m-form-item>
             <blog-input
               :border="false"
               placeholder="请输入邮箱"
               :width="320"
               v-model:value="loginForm.username"
             ></blog-input>
-          </blog-form-item>
-          <blog-form-item class="w-[320px]">
+          </m-form-item>
+          <m-form-item class="w-[320px]">
             <blog-input
               :width="320"
               :border="false"
@@ -39,12 +39,12 @@
               type="password"
               v-model:value="loginForm.password"
             ></blog-input>
-          </blog-form-item>
-          <blog-form-item>
+          </m-form-item>
+          <m-form-item>
             <blog-button type="primary" class="w-[320px]" @click="getResponse"
               >登录</blog-button
             >
-          </blog-form-item>
+          </m-form-item>
         </div>
       </div>
     </template>
@@ -59,6 +59,7 @@ import config from '@/config/config'
 import { articleStore } from '@/store/index'
 import { userLogin } from '@/api/auth'
 import { loginParams } from '@/types/api/auth'
+import { successMessage } from '../mongo-ui/message'
 
 const pinia = articleStore()
 const imgUrl = ref('https://upload.linkstarted.top/cloudfile/anya.jpg')
@@ -79,6 +80,7 @@ const getResponse = async () => {
         password: loginForm.value.password,
       }
       const data = await userLogin(params)
+      successMessage('登录成功')
       pinia.showLoginModal = false
       pinia.isLogin = true
       pinia.saveLoginUserInfo(data)

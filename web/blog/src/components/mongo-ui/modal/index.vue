@@ -8,43 +8,39 @@
     ref="maskRef"
   ></div>
   <!--MODAL-->
-  <div
-    v-if="visible"
-    @click.stop
-    :class="`${
-      paddingHide ? '' : 'p-4'
-    } fixed top-0 bottom-0 left-0 right-0 m-auto 
+  <transition name="fade">
+    <div
+      v-show="visible"
+      @click.stop
+      :class="`${
+        paddingHide ? '' : 'p-4'
+      } fixed top-0 bottom-0 left-0 right-0 m-auto 
     w-[600px]
     h-[${height}px]
-    bg-white rounded-md flex flex-col modal`"
-  >
-    <slot name="header" v-if="header">
-      <div class="flex">
-        <span class="font-semibold text-lg">{{ props.title }}</span>
-        <font-awesome-icon
-          icon="xmark"
-          class="ml-auto text-lg cursor-pointer"
-          @click="closeModal"
-        />
-      </div>
-    </slot>
-    <slot name="body"> this is a message </slot>
-
-    <slot name="footer" v-if="footer">
-      <div class="flex mt-auto">
-        <div class="ml-auto">
-          <blog-button>取消</blog-button>
-          <blog-button class="ml-2" type="primary">确认</blog-button>
+    bg-white rounded-md flex flex-col`"
+    >
+      <slot name="header" v-if="header">
+        <div class="flex">
+          <span class="font-semibold text-lg">{{ props.title }}</span>
+          <font-awesome-icon
+            icon="xmark"
+            class="ml-auto text-lg cursor-pointer"
+            @click="closeModal"
+          />
         </div>
-      </div>
-    </slot>
-  </div>
-  <!-- <div v-if="visible" class="w-[400px] h-[200px] bg-white"></div> -->
-  <!-- <div class="overlay" v-if="visible" @click="closeModal(true)">
-    <div class="modal">
-      <h1>Pick a Plan</h1>
+      </slot>
+      <slot name="body"> this is a message </slot>
+
+      <slot name="footer" v-if="footer">
+        <div class="flex mt-auto">
+          <div class="ml-auto">
+            <blog-button>取消</blog-button>
+            <blog-button class="ml-2" type="primary">确认</blog-button>
+          </div>
+        </div>
+      </slot>
     </div>
-  </div> -->
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -95,58 +91,56 @@ watch(props, () => {
 
 <style scoped lang="scss">
 .modal {
-  animation: fadeIn 0.1s ease-in-out;
+  animation: fadeIn 0.4s linear;
 }
-// css
-// .overlay {
-//   //visibility: hidden;
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background: rgba(0, 0, 0, 0.7);
-// }
+.modal-out {
+  animation: fadeOut 0.4s linear;
+}
 
-// .overlay:target {
-//   //visibility: visible;
-// }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
 
-// .modal {
-//   position: relative;
-//   width: 600px;
-//   max-width: 80%;
-//   background: white;
-//   border-radius: 8px;
-//   padding: 1em 2em;
-// }
-
-// .modal .close {
-//   position: absolute;
-//   top: 15px;
-//   right: 15px;
-//   color: grey;
-//   text-decoration: none;
-// }
-
-// .overlay .cancel {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-// }
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
 @keyframes fadeIn {
   0% {
+    transform: translateX(60px);
+    opacity: 0.25;
+  }
+  25% {
+    transform: translateX(40px);
     opacity: 0.5;
   }
   50% {
+    transform: translateX(20px);
     opacity: 0.75;
   }
   100% {
+    transform: translateX(10px);
     opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-20px);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateX(-40px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-60px);
+    opacity: 0;
   }
 }
 </style>
