@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { errorMessage } from '@/components/mongo-ui/message/index'
 import type { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 const service: AxiosInstance = axios.create({
   timeout: 30000,
@@ -19,8 +20,8 @@ service.interceptors.response.use((response: AxiosResponse) => {
   if (code === 20000) {
     return data
   } else {
-
     //处理业务错误。
+    errorMessage(message)
     return Promise.reject(new Error(message))
   }
 }, (error: AxiosError) => {
