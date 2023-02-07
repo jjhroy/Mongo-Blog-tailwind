@@ -99,29 +99,29 @@ watch(props, () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  animation: fadeIn 0.5s linear;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  animation: fadeOut 0.5s linear;
 }
 
 @keyframes fadeIn {
   0% {
     transform: translateX(60px);
-    opacity: 0.25;
+    opacity: 0.7;
   }
   25% {
     transform: translateX(40px);
-    opacity: 0.5;
+    opacity: 0.8;
   }
   50% {
     transform: translateX(20px);
-    opacity: 0.75;
+    opacity: 0.9;
   }
   100% {
-    transform: translateX(10px);
+    transform: translateX(0px);
     opacity: 1;
   }
 }
@@ -132,11 +132,11 @@ watch(props, () => {
   }
   25% {
     transform: translateX(-20px);
-    opacity: 0.75;
+    opacity: 0.5;
   }
   50% {
     transform: translateX(-40px);
-    opacity: 0.5;
+    opacity: 0.25;
   }
   100% {
     transform: translateX(-60px);
